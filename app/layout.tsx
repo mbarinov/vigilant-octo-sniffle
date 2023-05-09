@@ -1,5 +1,6 @@
 import './globals.css'
-import Head from 'next/head'
+import Script from 'next/script';
+
 import {Inter} from 'next/font/google'
 
 const inter = Inter({subsets: ['latin']})
@@ -16,9 +17,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <Head>
-            <script async src="https://cdn.loado.dev/sdk.js"/>
-        </Head>
+            <Script async src="https://cdn.loado.dev/sdk.js" strategy="lazyOnload"/>
         <body className={inter.className}>{children}</body>
         </html>
     )
